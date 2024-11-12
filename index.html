@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mobilny Terminal Straży Granicznej</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Mobilny Terminal Straży Granicznej</h1>
+    </header>
+
+    <section id="login-section">
+        <div class="login-container">
+            <h2>Logowanie do systemu</h2>
+            <form id="login-form">
+                <label for="username">Nazwa użytkownika</label>
+                <input type="text" id="username" placeholder="Wprowadź nazwę użytkownika" required>
+                
+                <label for="password">Hasło</label>
+                <input type="password" id="password" placeholder="Wprowadź hasło" required>
+
+                <button type="submit">Zaloguj</button>
+            </form>
+        </div>
+    </section>
+
+    <section id="dashboard" style="display: none;">
+        <div class="dashboard-header">
+            <h2>Panel Główny</h2>
+            <button id="logout-btn">Wyloguj</button>
+        </div>
+
+        <div class="dashboard-content">
+            <div class="card stats">
+                <h3>Statystyki</h3>
+                <p>Liczba zgłoszeń: <span id="reports-count">20</span></p>
+                <p>Aktywne zgłoszenia: <span id="active-reports">5</span></p>
+                <p>Oczekujące alerty: <span id="pending-alerts">2</span></p>
+            </div>
+
+            <div class="card map">
+                <h3>Mapa Zdarzeń</h3>
+                <div id="map-placeholder">[Mapa lokalizacji zdarzeń]</div>
+            </div>
+
+            <div class="card search">
+                <h3>Wyszukiwarka Osób i Pojazdów</h3>
+                <input type="text" id="search-input" placeholder="Wpisz nazwisko lub numer rejestracyjny...">
+                <select id="search-filter">
+                    <option value="all">Wszystko</option>
+                    <option value="people">Osoby</option>
+                    <option value="vehicles">Pojazdy</option>
+                </select>
+                <button id="search-btn">Szukaj</button>
+                <div id="search-results"></div>
+            </div>
+
+            <div class="card report">
+                <h3>Dodaj Nowy Raport</h3>
+                <form id="report-form">
+                    <label for="report-desc">Opis zdarzenia</label>
+                    <textarea id="report-desc" rows="4" required></textarea>
+                    <button type="submit">Zatwierdź</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <script src="app.js"></script>
+</body>
+</html>
